@@ -1,0 +1,21 @@
+{% extends "paginas/index.html" %}
+
+{% load static %}
+
+{%  block conteudo   %}
+
+<h3>Sobre</h3>
+<p>
+    Fotografias Eduardo Hermsdorff e Henrique Capel
+
+</p>
+
+<h4>Diagrama de Classes</h4>
+<img src="{% static 'img/diagramaclasse.jpeg' %}"> <br>
+
+<br>
+<h4> Diagrama de Casos de Uso </h4>
+<img src="{% static 'img/diagramauso.jpeg' %}">
+
+
+{% endblock %}
