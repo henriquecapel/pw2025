@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Cliente, Fotografo, Estudio, SessaoFoto
@@ -14,7 +14,7 @@ class ClienteCreate(CreateView):
     model = Cliente
     fields = ['nome', 'telefone', 'email']
     template_name = 'paginas/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('ListarClientes')
     extra_content = {'Cadastro Fotografia': 'Atualização de fotos', 'Enviar dados': 'protocolar',}
 
 
@@ -47,7 +47,7 @@ class ClienteUpdate(UpdateView):
     model = Cliente
     fields = ['nome', 'telefone', 'email']
     template_name = 'paginas/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('ListarClientes')
     extra_content = {'Cadastro Fotografia': 'Atualização de fotos', 'Enviar dados': 'protocolar',}
 
 
@@ -78,7 +78,7 @@ class ClienteDelete(DeleteView):
     model = Cliente
     fields = ['nome', 'telefone', 'email']
     template_name = 'paginas/form.html'
-    success_url = reverse_lazy('inicio')
+    success_url = reverse_lazy('ListarClientes')
     extra_content = {'Cadastro Fotografia': 'Atualização de fotos', 'Enviar dados': 'protocolar',}
 
 
@@ -102,3 +102,9 @@ class SessaoFotoDelete(DeleteView):
     template_name = 'paginas/form.html'
     success_url = reverse_lazy('inicio')
     extra_content = {'Cadastro Fotografia': 'Atualização de fotos', 'Enviar dados': 'protocolar',}
+    
+
+class ClienteListView(ListView):
+    model = Cliente
+    template_name = 'paginas/Listas/ListarClientes.html'
+   

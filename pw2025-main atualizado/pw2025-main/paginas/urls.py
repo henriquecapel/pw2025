@@ -18,4 +18,11 @@ urlpatterns = [
     path("excluir/fotografo/<int:pk>/", FotografoDelete.as_view(), name="excluir-fotografo"),
     path("excluir/estudio/<int:pk>/", EstudioDelete.as_view(), name="excluir-estudio"),
     path("excluir/sessao/<int:pk>/", SessaoFotoDelete.as_view(), name="excluir-sessao"),
+
+    path("listar/cliente/", ClienteListView.as_view(), name="listar-clientes"),
+
+
+
+
+
 ]
