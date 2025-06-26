@@ -1,0 +1,30 @@
+{% extends "paginas/index.html" %}
+
+{% load static %}
+
+{%  block conteudo   %}
+
+
+<h3> Lista de clientes </h3>
+<table>
+ <tr>
+<th>nome</th>
+<th>telefone</th>
+<th>email</th>
+ </tr>
+
+{% for  Cliente in object_list %}
+<td>{{Cliente.nome}}</td>
+<td>{{Cliente.telefone}}</td>
+<td>{{Cliente.email}}</td>
+<td>
+    <a href="{% url "editar-cliente" Cliente.pk %}">editar</a>
+    <a href="{% url "excluir-cliente" Cliente.pk %}">excluir</a>
+</td>
+
+{% endfor %}
+
+</table>
+
+
+{% endblock %}
